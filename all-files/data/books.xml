@@ -1,0 +1,20 @@
+<bookstore>
+<book category="PHP">
+<title lang="en">PHP 8 Standard Library</title>
+<author>Sanjib Sinha</author>
+<year>2021</year>
+<price>00.00</price>
+</book>
+<book category="FLUTTER">
+<title lang="en">Beginning Flutter with Dart</title>
+<author>Sanjib Sinha</author>
+<year>2020</year>
+<price>00.00</price>
+</book>
+<book category="WORDPRESS">
+<title lang="en">Learning WORDPRESS Coding</title>
+<author>John Doe</author>
+<year>2021</year>
+<price>00.00</price>
+</book>
+</bookstore>

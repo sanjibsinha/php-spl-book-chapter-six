@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Beginning Flutter with Dart",
+        "author": "Sanjib Sinha",
+        "description": "Learn how to build Mobile Application with Flutter and Dart Programming Language.",
+        "level": "Beginner",
+        "pages": "350",
+        "pubdate": "2019-07-09",
+        "subjects": [
+            "Android",
+            "iOS",
+            "Mobile Development"
+        ],
+        "software": [
+            "Flutter"
+        ]
+    },
+    {
+        "title": "Flutter State Management",
+        "author": "Sanjib Sinha",
+        "description": "Learn how to manage state in Flutter app.",
+        "level": "Intermediate",
+        "pages": "280",
+        "pubdate": "2020-02-05",
+        "subjects": [
+            "Android",
+            "iOS",
+            "Mobile Development"
+        ],
+        "software": [
+            "Flutter"
+        ]
+    },
+    {
+        "title": "Better Flutter",
+        "author": "Sanjib Sinha",
+        "description": "Learn all the key concepts about Flutter and Dart.",
+        "level": "Intermediate",
+        "pages": "330",
+        "pubdate": "2021-05-01",
+        "subjects": [
+            "Android",
+            "iOS",
+            "Mobile Development"
+        ],
+        "software": [
+            "Flutter"
+        ]
+    },
+    {
+        "title": "PHP 8 Standard Library",
+        "author": "Sanjib Sinha",
+        "description": "Learn how to solve common problems with the help of Standard PHP Library (SPL).",
+        "level": "Beginner",
+        "pages": "250",
+        "pubdate": "2021-12-31",
+        "subjects": [
+            "PHP Classes and Interfaces",
+            "Iteration",
+            "Web Development"
+        ],
+        "software": [
+            "PHP"
+        ]
+    }
+]
