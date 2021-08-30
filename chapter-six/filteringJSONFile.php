@@ -16,11 +16,44 @@
             <?php echo "Hello PHP SPL Class"; ?>
           </h1> 
           <h2>
-              
+              Filtering JSON file
           </h2>       
       </div>
       <div class="container">
         <code>
+          <?php
+
+              class FilteringAuthor extends FilterIterator
+              {
+                  protected $authorName;
+
+                  public function __construct(Iterator $iterator, $authorName)
+                  {
+                      parent::__construct($iterator);
+                      $this->authorName = $authorName;
+                  }
+
+                  public function accept()
+                  {
+                      return $this->current()->authorName == $this->authorName;
+                  }
+              }
+
+
+
+
+              $books = file_get_contents('../all-files/data/books.json');
+              $books = json_decode($books);
+              echo "<pre>";
+                print_r($books);
+                echo "<pre>";
+              /* $books = new ArrayIterator($books);
+              $books = new FilteringAuthor($books, 'Sanjib Sinha');
+              foreach ($books as $book) {
+                  echo "$book->title with $book->author (pages: $course->page)<br>";
+              } */
+
+          ?>
           
         </code>
       </div>

@@ -1,7 +1,7 @@
-# PHP-SPL-BOOK-Chapter-Five
+# PHP-SPL-BOOK-Chapter-Six
 
 I've started writing a book on Standard PHP Library. This code snippet 
-includes everything I've used in chapter five.
+includes everything I've used in chapter six.
 
 - [You'll get the book](https://leanpub.com/php8standardlibrary)
 
