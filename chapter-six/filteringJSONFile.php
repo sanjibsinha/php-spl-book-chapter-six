@@ -56,7 +56,55 @@
       </h2> 
       <div class="container">
         <code>
-        
+          
+        <?php
+
+          $books = file_get_contents('../all-files/data/books.json');              
+          $books = json_decode($books);
+
+          class TestIterator extends IteratorIterator
+          {
+              public function key()
+              {
+                  echo  __FUNCTION__, PHP_EOL;
+                  return parent::key();
+              }
+
+              public function next()
+              {
+                  echo  __FUNCTION__, PHP_EOL;
+                  return parent::next();
+              }
+
+              public function rewind()
+              {
+                  echo  __FUNCTION__, PHP_EOL;
+                  return parent::rewind();
+              }
+
+              public function valid()
+              {
+                  echo  __FUNCTION__, PHP_EOL;
+                  return parent::valid();
+              }
+          }
+
+          class TestFilterIterator extends FilterIterator
+          {
+              public function accept()
+              {
+                  echo  __FUNCTION__, PHP_EOL;
+                  return true;
+              }
+          }
+
+          $iterator = new ArrayIterator($books);
+
+          foreach (new TestFilterIterator(new TestIterator($iterator)) as $key => $value) {
+              echo PHP_EOL . "</br>";
+          }
+
+          ?>
           
         </code>
       </div>
