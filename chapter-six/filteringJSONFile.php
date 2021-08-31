@@ -115,9 +115,35 @@
         <code>
 
         <?php
+        
+
+        $books = file_get_contents('../all-files/data/books.json');              
+        $books = json_decode($books);        
+        foreach ($books as $book) {
+            echo "$book->title with $book->author (Year: $book->pubdate)<br>";?>
+            Subjects: 
+            <?php
+            foreach ($book->subjects as $value) {
+              echo "$value, ";
+            }
+            foreach ($book->software as $value) {
+              echo "Software: $value</br>";
+            }
+        }
+        ?>
+          
+        </code>
+
+      </div>
+      <h2>
+              
+      </h2> 
+      <div class="container">
+        <code>
+        <?php
         class UserFilter extends FilterIterator
         {
-            private $userFilter;
+            public $userFilter;
           
             public function __construct(Iterator $iterator , $filter )
             {
@@ -133,30 +159,13 @@
 
         $books = file_get_contents('../all-files/data/books.json');              
         $books = json_decode($books);
-
-        $iterator = new ArrayIterator($books);
-        $iterator = new UserFilter($iterator, 'Json Web');
-        // print_r($books);
-        if ($iterator) {
-          while( $iterator->valid() )
-          {
-              echo $iterator->key() . " = " . $iterator->current() . "</br></br>";
-              $iterator->next();
-          }
-        }
-        foreach ($books as $book) {
-            echo "$book->title with $book->author (Year: $book->pubdate)<br>";
-        }
+        $books = new ArrayIterator($books);
+        $books = new UserFilter($books, 'Json Web');
+        echo $books->userFilter;
+        
         ?>
-          
-        </code>
 
-      </div>
-      <h2>
-              
-      </h2> 
-      <div class="container">
-        <code>
+
 
        
           
