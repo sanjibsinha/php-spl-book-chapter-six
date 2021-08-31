@@ -113,6 +113,41 @@
       </h2> 
       <div class="container">
         <code>
+
+        <?php
+        class UserFilter extends FilterIterator
+        {
+            private $userFilter;
+          
+            public function __construct(Iterator $iterator , $filter )
+            {
+                parent::__construct($iterator);
+                $this->userFilter = $filter;
+            }
+          
+            public function accept()
+            {
+              return $this->current()->userFilter == $this->userFilter;
+            }
+        }
+
+        $books = file_get_contents('../all-files/data/books.json');              
+        $books = json_decode($books);
+
+        $iterator = new ArrayIterator($books);
+        $iterator = new UserFilter($iterator, 'Json Web');
+        // print_r($books);
+        if ($iterator) {
+          while( $iterator->valid() )
+          {
+              echo $iterator->key() . " = " . $iterator->current() . "</br></br>";
+              $iterator->next();
+          }
+        }
+        foreach ($books as $book) {
+            echo "$book->title with $book->author (Year: $book->pubdate)<br>";
+        }
+        ?>
           
         </code>
 
@@ -122,6 +157,8 @@
       </h2> 
       <div class="container">
         <code>
+
+       
           
         </code>
 
