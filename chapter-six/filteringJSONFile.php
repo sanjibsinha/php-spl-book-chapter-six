@@ -16,43 +16,34 @@
             <?php echo "Hello PHP SPL Class"; ?>
           </h1> 
           <h2>
-              Filtering JSON file
+              Converting JSON file into an Array and reading values
           </h2>       
       </div>
       <div class="container">
         <code>
           <?php
-
-              class FilteringAuthor extends FilterIterator
-              {
-                  protected $authorName;
-
-                  public function __construct(Iterator $iterator, $authorName)
-                  {
-                      parent::__construct($iterator);
-                      $this->authorName = $authorName;
-                  }
-
-                  public function accept()
-                  {
-                      return $this->current()->authorName == $this->authorName;
-                  }
-              }
-
-
-
-
-              $books = file_get_contents('../all-files/data/books.json');
+              $books = file_get_contents('../all-files/data/books.json');              
               $books = json_decode($books);
               echo "<pre>";
-                print_r($books);
-                echo "<pre>";
-              /* $books = new ArrayIterator($books);
-              $books = new FilteringAuthor($books, 'Sanjib Sinha');
-              foreach ($books as $book) {
-                  echo "$book->title with $book->author (pages: $course->page)<br>";
-              } */
+              print_r($books);
+              echo "<pre>";
+              $obj = new ArrayObject( $books );
+              $iterator = $obj->getIterator();
 
+              // We can count how many items are we iterating over?
+              echo "<h3>Iterating over: " . $obj->count() . " values</h3>";
+              echo "<h1>Getting output from forach Loop, key and value </h1>";
+
+              /// The good thing here is we can iterate with [foreach] loop
+
+              foreach ($iterator as $variable){
+                foreach ($variable as $key => $value) {
+                  # code...
+                  echo "<h4>$key => $value</h4>";                  
+                }
+                echo "</br>";
+              }
+            
           ?>
           
         </code>
@@ -65,6 +56,7 @@
       </h2> 
       <div class="container">
         <code>
+        
           
         </code>
       </div>
